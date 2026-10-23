@@ -127,6 +127,10 @@ document.addEventListener('DOMContentLoaded', () => {
         modalOverlay.classList.add('open');
         modalOverlay.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
+
+        if (window.parent && window.parent !== window) {
+            window.parent.postMessage({ type: 'inatel-programas-modal-opened', height: Math.max(document.body.scrollHeight, 850) }, '*');
+        }
     }
 
     function closeModal() {
@@ -134,7 +138,22 @@ document.addEventListener('DOMContentLoaded', () => {
         modalOverlay.classList.remove('open');
         modalOverlay.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
+
+        if (window.parent && window.parent !== window) {
+            window.parent.postMessage({ type: 'inatel-programas-modal-closed' }, '*');
+        }
     }
+
+    function notifyHeight() {
+        if (window.parent && window.parent !== window) {
+            window.parent.postMessage({
+                type: 'inatel-programas-resize',
+                height: document.documentElement.scrollHeight || document.body.scrollHeight
+            }, '*');
+        }
+    }
+    window.addEventListener('load', notifyHeight);
+    window.addEventListener('resize', notifyHeight);
 
     const cards = document.querySelectorAll('.apoio-card');
     cards.forEach(card => {
