@@ -1,0 +1,28 @@
+<!-- ======================================================================
+     BLOCO EMBED (IFRAME) — APOIO AO EMPREENDEDORISMO (INATEL STARTUPS)
+     Layout com Expansão Inline (Imune a Menus Fixos e Sem Modais Flutuantes)
+     Basta colar este código onde a seção deve aparecer na página.
+     ====================================================================== -->
+<div id="inatel-programas-embed-wrapper" style="width: 100%; overflow: hidden;">
+    <iframe
+        id="inatel-programas-iframe"
+        src="https://inatelstartups.github.io/programas-startups/"
+        title="Apoio ao Empreendedorismo - Inatel Startups"
+        style="width: 100%; min-height: 520px; border: none; display: block; background: transparent;"
+        scrolling="no"
+        loading="lazy"
+        allowtransparency="true"
+    ></iframe>
+</div>
+
+<script>
+    // Ajusta automaticamente a altura do frame em tempo real (ao abrir detalhes ou redimensionar)
+    window.addEventListener('message', function (event) {
+        if (event.data && event.data.type === 'inatel-programas-resize' && event.data.height) {
+            var iframe = document.getElementById('inatel-programas-iframe');
+            if (iframe) {
+                iframe.style.height = event.data.height + 'px';
+            }
+        }
+    });
+</script>
