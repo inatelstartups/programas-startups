@@ -1,6 +1,6 @@
 /* ======================================================================
-   INATEL STARTUPS — PROGRAMAS (APOIO AO EMPREENDEDORISMO)
-   Layout com Modal Pop-up Compatível com Menus Fixos
+   INATEL STARTUPS — APOIO AO EMPREENDEDORISMO (PROGRAMAS)
+   Layout 100% fiel ao site oficial com Pop-up compatível com Menus Fixos
    ====================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
 
@@ -8,14 +8,14 @@
     --primary: #FF5E00;
     --primary-rgb: 255, 94, 0;
     --primary-hover: #ff7a29;
-    --bg-main: #060B1E;
+    --secondary: #2563EB;
+    --secondary-rgb: 37, 99, 235;
+    --bg-main: #0B0F19;
     --bg-card: rgba(255, 255, 255, 0.02);
-    --bg-card-hover: rgba(255, 255, 255, 0.04);
     --border-color: rgba(255, 255, 255, 0.08);
-    --text-light: #f8fafc;
-    --text-muted: #94a3b8;
-    --card-radius: 20px;
-    --menu-height: 140px; /* Altura combinada dos cabeçalhos fixos do site */
+    --text-light: #F8FAFC;
+    --text-muted: #94A3B8;
+    --text-blue: #60A5FA;
 }
 
 * {
@@ -35,30 +35,26 @@ body {
 
 /* ================= SECTION CONTAINER ================= */
 .section {
-    padding: 60px 0 50px 0;
+    padding: 64px 0;
     position: relative;
     background: transparent;
     width: 100%;
 }
 
+.section-alt {
+    background: rgba(255, 255, 255, 0.01);
+}
+
 .container {
-    max-width: 1240px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
 }
 
-@media (min-width: 640px) {
-    .container { padding: 0 32px; }
-}
-
-@media (min-width: 1024px) {
-    .container { padding: 0 40px; }
-}
-
-/* ================= HEADER ================= */
+/* ================= SECTION HEADER ================= */
 .section-header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 48px;
     position: relative;
     z-index: 2;
 }
@@ -84,183 +80,210 @@ body {
 }
 
 @media (max-width: 640px) {
-    .section { padding: 40px 0 30px 0; }
-    .section-header { margin-bottom: 28px; }
+    .section { padding: 40px 0; }
+    .section-header { margin-bottom: 32px; }
     .section-header h2 { font-size: 1.85rem; }
     .section-header p { font-size: 14px; }
 }
 
-/* ================= PROGRAMAS GRID ================= */
-.programas-grid {
+/* ================= GRID 3 ================= */
+.grid-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 30px;
     position: relative;
     z-index: 2;
 }
 
 @media (max-width: 900px) {
-    .programas-grid {
+    .grid-3 {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 24px;
     }
 }
 
-/* ================= PROGRAMA CARD ================= */
-.programa-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: var(--card-radius);
-    padding: 32px 28px 24px 28px;
+/* ================= APOIO AO EMPREENDEDORISMO ================= */
+.apoio-card {
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    padding: 40px;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    cursor: pointer;
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    height: 100%;
+}
+
+.apoio-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(var(--secondary-rgb), 0.15), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.apoio-card:nth-child(2)::before {
+    background: radial-gradient(circle at top right, rgba(var(--primary-rgb), 0.15), transparent 60%);
+}
+
+.apoio-card:nth-child(3)::before {
+    background: radial-gradient(circle at top right, rgba(52, 211, 153, 0.15), transparent 60%);
+}
+
+.apoio-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(var(--secondary-rgb), 0.8), transparent);
+    transform: scaleX(0);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.apoio-card:nth-child(2)::after {
+    background: linear-gradient(90deg, transparent, rgba(var(--primary-rgb), 0.8), transparent);
+}
+
+.apoio-card:nth-child(3)::after {
+    background: linear-gradient(90deg, transparent, rgba(52, 211, 153, 0.8), transparent);
+}
+
+.apoio-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(var(--secondary-rgb), 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(var(--secondary-rgb), 0.1);
+}
+
+.apoio-card:nth-child(2):hover {
+    border-color: rgba(var(--primary-rgb), 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(var(--primary-rgb), 0.1);
+}
+
+.apoio-card:nth-child(3):hover {
+    border-color: rgba(52, 211, 153, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(52, 211, 153, 0.1);
+}
+
+.apoio-card:hover::before {
+    opacity: 1;
+}
+
+.apoio-card:hover::after {
+    transform: scaleX(1);
+}
+
+.apoio-card-content {
     position: relative;
-    user-select: none;
-}
-
-.programa-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(255, 94, 0, 0.4);
-    background: var(--bg-card-hover);
-    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35);
-}
-
-.programa-card:focus-visible {
-    outline: 2px solid var(--primary);
-    outline-offset: 3px;
-}
-
-.programa-card-top {
+    z-index: 2;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 22px;
-}
-
-.programa-icon-wrap {
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
-    background: rgba(255, 94, 0, 0.1);
-    border: 1px solid rgba(255, 94, 0, 0.25);
-    color: var(--primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease;
-}
-
-.programa-card:hover .programa-icon-wrap {
-    transform: scale(1.08);
-}
-
-.programa-stage-badge {
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding: 5px 12px;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #cbd5e1;
-}
-
-.programa-title {
-    font-size: 1.45rem;
-    font-weight: 800;
-    color: #ffffff;
-    margin-bottom: 10px;
-    letter-spacing: -0.01em;
-}
-
-.programa-desc {
-    font-size: 14.5px;
-    color: var(--text-muted);
-    line-height: 1.55;
-    margin-bottom: 24px;
+    flex-direction: column;
     flex-grow: 1;
 }
 
-.programa-action {
+.apoio-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: rgba(var(--secondary-rgb), 0.1);
+    color: var(--text-blue);
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding-top: 16px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    font-size: 13.5px;
-    font-weight: 700;
-    color: #cbd5e1;
-    transition: all 0.25s ease;
+    justify-content: center;
+    margin-bottom: 24px;
+    border: 1px solid rgba(var(--secondary-rgb), 0.2);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.programa-card:hover .programa-action {
-    color: #ffffff;
+.apoio-card:hover .apoio-icon {
+    transform: scale(1.1);
+    background: rgba(var(--secondary-rgb), 0.2);
+    box-shadow: 0 0 20px rgba(var(--secondary-rgb), 0.3);
 }
 
-.programa-action svg {
+.apoio-card:nth-child(2) .apoio-icon {
+    background: rgba(var(--primary-rgb), 0.1);
     color: var(--primary);
-    transition: transform 0.25s ease;
+    border-color: rgba(var(--primary-rgb), 0.2);
 }
 
-.programa-card:hover .programa-action svg {
-    transform: translateX(4px);
+.apoio-card:nth-child(2):hover .apoio-icon {
+    background: rgba(var(--primary-rgb), 0.2);
+    box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.3);
 }
 
-/* ================= CTA DA SEÇÃO ================= */
-.section-cta-wrap {
-    text-align: center;
-    margin-top: 40px;
-    position: relative;
-    z-index: 2;
+.apoio-card:nth-child(3) .apoio-icon {
+    background: rgba(52, 211, 153, 0.1);
+    color: #34D399;
+    border-color: rgba(52, 211, 153, 0.2);
 }
 
-.btn-main-cta {
+.apoio-card:nth-child(3):hover .apoio-icon {
+    background: rgba(52, 211, 153, 0.2);
+    box-shadow: 0 0 20px rgba(52, 211, 153, 0.3);
+}
+
+.apoio-card h3 {
+    font-size: 22px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 12px;
+}
+
+.apoio-card p {
+    color: var(--text-muted);
+    font-size: 14.5px;
+    line-height: 1.65;
+    margin-bottom: 28px;
+    flex-grow: 1;
+}
+
+.apoio-link {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-blue);
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    padding: 14px 34px;
-    background: linear-gradient(135deg, var(--primary) 0%, #ff7a29 100%);
-    color: #ffffff;
-    font-size: 14.5px;
-    font-weight: 700;
-    border-radius: 999px;
-    text-decoration: none;
-    box-shadow: 0 6px 20px rgba(var(--primary-rgb), 0.35);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    gap: 8px;
+    margin-top: auto;
 }
 
-.btn-main-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 28px rgba(var(--primary-rgb), 0.5);
+.apoio-card:nth-child(2) .apoio-link {
+    color: var(--primary);
 }
 
-.btn-main-cta svg {
-    transition: transform 0.25s ease;
+.apoio-card:nth-child(3) .apoio-link {
+    color: #34D399;
 }
 
-.btn-main-cta:hover svg {
+.apoio-link svg {
+    transition: transform 0.3s;
+}
+
+.apoio-card:hover .apoio-link svg {
     transform: translateX(4px);
 }
 
-/* ======================================================================
-   MODAL POP-UP (COMPATÍVEL COM MENUS FIXOS)
-   Garante que o pop-up NUNCA fique atrás dos menus superiores (~140px)
-   ====================================================================== */
+/* ================= INTERACTIVE POPUP MODALS ================= */
 .modal-overlay {
     position: fixed;
     inset: 0;
-    z-index: 999999; /* Z-index máximo para sobrepor o backdrop geral */
-    background: rgba(3, 7, 20, 0.85);
+    background: rgba(2, 6, 23, 0.85);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     display: flex;
+    align-items: flex-start; /* Alinha abaixo dos menus fixos */
     justify-content: center;
-    align-items: flex-start; /* Alinhamento ao topo com espaçamento seguro */
-    padding-top: 155px;      /* ESPAÇO SEGURO: Abre estritamente abaixo dos menus fixos (140px) */
+    z-index: 999999;
+    padding-top: 155px;      /* ESPAÇO SEGURO: Abre estritamente abaixo do cabeçalho institucional e menu (~140px) */
     padding-bottom: 40px;
     padding-left: 20px;
     padding-right: 20px;
@@ -268,10 +291,9 @@ body {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease;
+    transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Ajuste quando executado dentro de frame embutido */
 body.in-iframe .modal-overlay {
     padding-top: 30px;
     align-items: center;
@@ -284,201 +306,164 @@ body.in-iframe .modal-overlay {
 }
 
 .modal-content {
-    background: #0B132B;
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
     border-radius: 28px;
-    padding: 38px 40px;
-    max-width: 660px;
+    padding: 40px;
+    max-width: 650px;
     width: 100%;
-    max-height: calc(100vh - 190px); /* Garante que caiba com folga no restante da tela */
+    max-height: calc(100vh - 190px);
     overflow-y: auto;
     position: relative;
-    transform: scale(0.93) translateY(-10px);
+    transform: scale(0.92);
     transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(255, 94, 0, 0.08);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
     color: var(--text-light);
 }
 
 .modal-overlay.open .modal-content {
-    transform: scale(1) translateY(0);
+    transform: scale(1);
 }
 
-/* Scrollbar estilizada no conteúdo do modal */
-.modal-content::-webkit-scrollbar {
-    width: 6px;
-}
-.modal-content::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 10px;
-}
-.modal-content::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 10px;
-}
-
-/* Botão de Fechar */
 .modal-close {
     position: absolute;
     top: 24px;
     right: 24px;
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    color: #cbd5e1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 24px;
-    line-height: 1;
-    transition: all 0.25s ease;
-    z-index: 5;
+    font-size: 18px;
+    transition: all 0.3s;
 }
 
 .modal-close:hover {
-    background: rgba(255, 94, 0, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--primary);
     border-color: var(--primary);
-    color: #ffffff;
-    transform: rotate(90deg);
+    box-shadow: 0 0 8px rgba(var(--primary-rgb), 0.5);
 }
 
-/* Cabeçalho do Modal */
 .modal-header {
-    padding-right: 48px;
     margin-bottom: 24px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    padding-bottom: 20px;
-}
-
-.modal-badge {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding: 4px 12px;
-    border-radius: 999px;
-    background: rgba(255, 94, 0, 0.15);
-    border: 1px solid rgba(255, 94, 0, 0.35);
-    color: #ff914d;
-    margin-bottom: 12px;
+    padding-right: 40px;
 }
 
 .modal-header h3 {
-    font-size: 1.85rem;
+    font-size: 28px;
     font-weight: 800;
-    color: #ffffff;
-    margin-bottom: 8px;
-    letter-spacing: -0.02em;
+    color: white;
 }
 
 .modal-header p {
-    font-size: 14.5px;
-    color: var(--text-muted);
-    line-height: 1.6;
+    color: var(--text-blue);
+    font-size: 14px;
+    margin-top: 6px;
+    line-height: 1.55;
 }
 
-/* Corpo do Modal */
-.modal-section-title {
-    font-size: 11.5px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--primary);
-    margin-bottom: 16px;
-}
-
-.modal-items-list {
+.modal-body {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-bottom: 28px;
+    gap: 20px;
 }
 
-.modal-list-item {
-    background: rgba(255, 255, 255, 0.025);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 14px;
-    padding: 16px 18px;
+.modal-section-title {
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+/* Premium Modal Item */
+.premium-modal-item {
     display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    transition: border-color 0.25s ease;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    transition: all 0.3s ease;
 }
 
-.modal-list-item:hover {
-    border-color: rgba(255, 94, 0, 0.3);
+.premium-modal-item:hover {
+    background: rgba(var(--primary-rgb), 0.05);
+    border-color: rgba(var(--primary-rgb), 0.3);
+    transform: translateX(4px);
 }
 
 .modal-item-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
-    background: rgba(255, 94, 0, 0.1);
-    border: 1px solid rgba(255, 94, 0, 0.2);
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(var(--primary-rgb), 0.1);
     color: var(--primary);
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
+    border: 1px solid rgba(var(--primary-rgb), 0.2);
 }
 
 .modal-item-text strong {
+    color: var(--text-blue);
     display: block;
+    margin-bottom: 4px;
     font-size: 14.5px;
-    color: #ffffff;
-    font-weight: 700;
-    margin-bottom: 3px;
 }
 
 .modal-item-text p {
-    font-size: 13.5px;
     color: var(--text-muted);
+    font-size: 13.5px;
     line-height: 1.5;
+    margin: 0;
 }
 
-/* Rodapé do Modal */
-.modal-footer {
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.btn-modal-primary {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    padding: 15px 28px;
-    background: linear-gradient(135deg, var(--primary) 0%, #ff7a29 100%);
-    color: #ffffff;
-    font-size: 15px;
+/* Botão CTA do Modal */
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-light);
+    font-size: 14px;
     font-weight: 700;
+    padding: 14px 28px;
     border-radius: 999px;
     text-decoration: none;
-    box-shadow: 0 6px 20px rgba(var(--primary-rgb), 0.35);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
 }
 
-.btn-modal-primary:hover {
+.btn-secondary:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    box-shadow: 0 4px 15px rgba(var(--primary-rgb), 0.4);
     transform: translateY(-2px);
-    box-shadow: 0 10px 28px rgba(var(--primary-rgb), 0.5);
 }
 
-.btn-modal-primary svg {
-    transition: transform 0.25s ease;
+.btn-secondary svg {
+    transition: transform 0.3s;
 }
 
-.btn-modal-primary:hover svg {
+.btn-secondary:hover svg {
     transform: translateX(4px);
 }
 
 /* Responsividade Mobile */
 @media (max-width: 640px) {
     .modal-overlay {
-        padding-top: 110px; /* Em telas menores o menu reduz de tamanho */
+        padding-top: 110px;
         padding-left: 14px;
         padding-right: 14px;
     }
@@ -488,6 +473,9 @@ body.in-iframe .modal-overlay {
         max-height: calc(100vh - 140px);
     }
     .modal-header h3 {
-        font-size: 1.5rem;
+        font-size: 22px;
+    }
+    .apoio-card {
+        padding: 28px 24px;
     }
 }
