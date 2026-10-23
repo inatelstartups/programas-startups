@@ -4,108 +4,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apoio ao Empreendedorismo - Inatel Startups</title>
-    <link rel="stylesheet" href="style.css?v=1">
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
+
     <section id="jornada" class="section">
         <div class="container">
+            <!-- CABEÇALHO DA SEÇÃO -->
             <div class="section-header">
                 <h2>Apoio ao <span>Empreendedorismo</span></h2>
-                <p>Nosso programa de incubação apoia todas as etapas de desenvolvimento da sua startup, da validação à escala de mercado.</p>
+                <p>Nosso programa de incubação apoia todas as etapas de desenvolvimento da sua startup, da concepção e validação do problema à escala e tração no mercado.</p>
             </div>
 
             <!-- GRID DOS 3 PROGRAMAS -->
             <div class="programas-grid">
+                
                 <!-- CARD 1: IDEAÇÃO -->
-                <div class="programa-card" data-track="ideacao">
+                <div class="programa-card" data-track="ideacao" tabindex="0" role="button" aria-haspopup="dialog">
                     <div class="programa-card-top">
                         <div class="programa-icon-wrap">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
                         </div>
                         <span class="programa-stage-badge">Estágio Inicial</span>
                     </div>
                     <h3 class="programa-title">Ideação</h3>
-                    <p class="programa-desc">Valide o problema, estruture uma proposta de valor clara e defina o modelo de negócios da sua startup.</p>
+                    <p class="programa-desc">Valide o problema, estruture uma proposta de valor clara e defina o modelo de negócios da sua startup com apoio de especialistas.</p>
                     <div class="programa-action">
-                        <span>Ver diferenciais e benefícios</span>
-                        <svg class="programa-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        <span>Saiba mais</span>
+                        <svg class="programa-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
                     </div>
                 </div>
 
                 <!-- CARD 2: PRÉ-INCUBAÇÃO -->
-                <div class="programa-card" data-track="preincubacao">
+                <div class="programa-card" data-track="preincubacao" tabindex="0" role="button" aria-haspopup="dialog">
                     <div class="programa-card-top">
                         <div class="programa-icon-wrap">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
                         </div>
                         <span class="programa-stage-badge">Prototipagem & MVP</span>
                     </div>
                     <h3 class="programa-title">Pré-Incubação</h3>
-                    <p class="programa-desc">Desenvolva protótipos funcionais, construa seu MVP e teste a tração inicial diretamente com clientes no mercado.</p>
+                    <p class="programa-desc">Desenvolva protótipos funcionais, construa seu MVP e teste a tração inicial diretamente com clientes reais no mercado.</p>
                     <div class="programa-action">
-                        <span>Ver diferenciais e benefícios</span>
-                        <svg class="programa-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        <span>Saiba mais</span>
+                        <svg class="programa-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
                     </div>
                 </div>
 
                 <!-- CARD 3: INCUBAÇÃO -->
-                <div class="programa-card" data-track="incubacao">
+                <div class="programa-card" data-track="incubacao" tabindex="0" role="button" aria-haspopup="dialog">
                     <div class="programa-card-top">
                         <div class="programa-icon-wrap">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                <polyline points="2 17 12 22 22 17"></polyline>
+                                <polyline points="2 12 12 17 22 12"></polyline>
+                            </svg>
                         </div>
                         <span class="programa-stage-badge">Escala & Mercado</span>
                     </div>
                     <h3 class="programa-title">Incubação</h3>
-                    <p class="programa-desc">Estruture processos comerciais previsíveis, otimize a gestão do negócio e prepare-se para rodadas de investimento.</p>
+                    <p class="programa-desc">Estruture processos comerciais previsíveis, otimize a gestão do negócio e prepare-se para rodadas de investimento e captação.</p>
                     <div class="programa-action">
-                        <span>Ver diferenciais e benefícios</span>
-                        <svg class="programa-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        <span>Saiba mais</span>
+                        <svg class="programa-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
                     </div>
                 </div>
+
             </div>
 
-            <!-- PAINEL EXPANSÍVEL INLINE (SUBSTITUI MODAIS FLUTUANTES) -->
-            <div id="programas-drawer" class="inline-details-drawer">
-                <div class="details-panel-inner">
-                    <div class="panel-header-wrap">
-                        <div class="panel-header-left">
-                            <div class="panel-title-row">
-                                <h3 id="panel-title" class="panel-title">Ideação</h3>
-                                <span id="panel-stage" class="panel-stage-tag">Estágio Inicial</span>
-                            </div>
-                            <p id="panel-subtitle" class="panel-subtitle">Valide seu problema, estruture uma proposta de valor clara e defina o modelo de negócios da sua startup com o apoio de nossa equipe e time de mentores.</p>
-                        </div>
-                        <button id="panel-close-btn" class="panel-close-btn" aria-label="Fechar detalhes">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                        </button>
-                    </div>
-
-                    <div class="panel-section-label">O que este programa oferece</div>
-                    <div id="panel-benefits-grid" class="benefits-grid">
-                        <!-- Benefícios renderizados dinamicamente via programas.js -->
-                    </div>
-
-                    <div class="panel-footer-row">
-                        <span class="panel-cta-note">Inscrições abertas continuamente para startups e empreendedores de base tecnológica.</span>
-                        <a href="https://airtable.com/appMBITuDbmvqHb66/shr8gDPju26PFirSf" id="panel-cta-btn" target="_blank" rel="noopener noreferrer" class="panel-cta-btn">
-                            <span>Inscreva-se na Trilha</span>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CTA DA SEÇÃO -->
+            <!-- CTA INFERIOR -->
             <div class="section-cta-wrap">
-                <a href="https://airtable.com/appMBITuDbmvqHb66/shr8gDPju26PFirSf" target="_blank" rel="noopener noreferrer" class="btn-primary">
-                    <span>Inscreva-se no Inatel Startups</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                <a href="https://airtable.com/appMBITuDbmvqHb66/shr8gDPju26PFirSf" target="_blank" rel="noopener noreferrer" class="btn-main-cta">
+                    <span>Inscreva sua Startup no Inatel</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
                 </a>
             </div>
         </div>
     </section>
 
-    <script src="programas.js?v=1"></script>
+    <!-- ================= MODAL POP-UP (COMPATÍVEL COM MENU FIXO) ================= -->
+    <div id="track-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-content">
+            <!-- Botão de Fechar com destaque e acessibilidade -->
+            <button class="modal-close" id="modal-close-btn" aria-label="Fechar pop-up">&times;</button>
+            
+            <div class="modal-header">
+                <span class="modal-badge" id="modal-badge">Estágio Inicial</span>
+                <h3 id="modal-title">Ideação</h3>
+                <p id="modal-subtitle">Subtítulo explicativo</p>
+            </div>
+            
+            <div class="modal-body">
+                <div class="modal-section-title">O que o programa oferece</div>
+                <div id="modal-items" class="modal-items-list">
+                    <!-- Itens renderizados dinamicamente via programas.js -->
+                </div>
+                
+                <div class="modal-footer">
+                    <a href="https://airtable.com/appMBITuDbmvqHb66/shr8gDPju26PFirSf" id="modal-link" target="_blank" rel="noopener noreferrer" class="btn-modal-primary">
+                        <span>Inscreva-se na Seleção</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT DE INTERAÇÃO -->
+    <script src="programas.js"></script>
 </body>
 </html>
