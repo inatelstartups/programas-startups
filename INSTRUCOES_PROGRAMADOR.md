@@ -1,21 +1,36 @@
 # Apoio ao Empreendedorismo — Inatel Startups (Guia do Programador)
 
-Este módulo contém a seção **Apoio ao Empreendedorismo (Ideação, Pré-Incubação e Incubação)** do Inatel Startups, com pop-up modal projetado especificamente para **funcionar em harmonia com os menus e cabeçalhos fixos institucionais do Inatel**.
+Este módulo contém a seção **Apoio ao Empreendedorismo (Ideação, Pré-Incubação e Incubação)** do Inatel Startups, exatamente idêntica à versão de produção no ar em `inatel.br/startups/plataforma-hubfigital`, mas com **solução definitiva para a sobreposição de cabeçalhos institucionais**.
 
-> **Compatibilidade com o Menu Fixo:** O pop-up modal foi ajustado com posicionamento superior seguro (`padding-top: 155px`), abrindo **estritamente abaixo dos menus fixos do topo da página (~140px)**. Isso garante que o título do pop-up e o botão de fechar (`&times;`) fiquem 100% visíveis, sem jamais ficarem escondidos sob os cabeçalhos.
+---
+
+## 🎯 Melhorias e Correções Implementadas
+
+1. **Compatibilidade com o Menu Fixo Institucional:**
+   - O pop-up modal abre com posicionamento superior de segurança (`padding-top: 155px` no desktop e `110px` no mobile).
+   - O título do modal e o botão de fechar (`&times;`) ficam **estritamente abaixo dos menus fixos do topo (~140px)**, nunca mais ficando escondidos.
+   - O modal possui `max-height: calc(100vh - 190px)` e barra de rolagem interna quando necessário.
+
+2. **Barra Lateral de Rolagem (Scrollbar) Institucional:**
+   - Estilizada em tom **azul cobalto oficial** (`#065dc4` com borda `#066ce2`), exatamente como na folha de estilos do portal Inatel.
+
+3. **Textos, Botões e CTAs Verbatim da Produção:**
+   - Subtítulo oficial: *"Nosso programa de incubação apoia todas as etapas de desenvolvimento de uma startup."*
+   - Botão inferior oficial: `Inscreva-se ➔` direcionando ao Airtable oficial (`shr8gDPju26PFirSf`).
+   - Cards com ação `Ver detalhes e benefícios ➔`.
 
 ---
 
 ## 🔗 Links Oficiais
 
-- **URL do Frame (GitHub Pages):** [https://inatelstartups.github.io/programas-startups/](https://inatelstartups.github.io/programas-startups/)
+- **URL do Frame Direto (GitHub Pages):** [https://inatelstartups.github.io/programas-startups/](https://inatelstartups.github.io/programas-startups/)
 - **Repositório GitHub:** [https://github.com/inatelstartups/programas-startups](https://github.com/inatelstartups/programas-startups)
 
 ---
 
 ## ⚡ Opção 1 (Recomendada): Inserir via Embed (`<iframe>`)
 
-Basta colar o trecho abaixo no local onde a faixa deve aparecer:
+Basta colar o trecho abaixo no local exato onde o bloco deve aparecer:
 
 ```html
 <!-- APOIO AO EMPREENDEDORISMO — INATEL STARTUPS -->
@@ -37,12 +52,15 @@ Basta colar o trecho abaixo no local onde a faixa deve aparecer:
         var iframe = document.getElementById('inatel-programas-iframe');
         if (!iframe) return;
 
+        // Auto-redimensionamento dinâmico
         if (event.data.type === 'inatel-programas-resize' && event.data.height) {
             iframe.style.height = event.data.height + 'px';
         }
+        // Expansão ao abrir o modal
         if (event.data.type === 'inatel-programas-modal-opened') {
-            iframe.style.height = Math.max(820, event.data.height || 820) + 'px';
+            iframe.style.height = Math.max(850, event.data.height || 850) + 'px';
         }
+        // Retorno da altura normal ao fechar
         if (event.data.type === 'inatel-programas-modal-closed') {
             iframe.style.height = '520px';
         }
@@ -54,7 +72,7 @@ Basta colar o trecho abaixo no local onde a faixa deve aparecer:
 
 ## 🧩 Opção 2: Inclusão Direta no Código-Fonte
 
-Caso prefira colar o código diretamente no tema/página:
-1. **HTML:** Copie a `<section id="jornada" class="section">...</section>` e o `<div id="track-modal" class="modal-overlay">...</div>` do arquivo `index.html`.
+Caso prefira mesclar diretamente nos arquivos do site:
+1. **HTML:** Copie a tag `<main class="hub-main">` com a `<section id="jornada">` e o `<div id="track-modal">` de `index.html`.
 2. **CSS:** Adicione os estilos de `style.css`.
-3. **JS:** Adicione `programas.js` antes do fechamento da tag `</body>`.
+3. **JS:** Adicione `programas.js` antes do fechamento de `</body>`.
